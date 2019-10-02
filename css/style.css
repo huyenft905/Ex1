@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/*body*/
+html {
+    background-color: darkgray;
+}
+
+/*header*/
+header {
+    background-color: #e2e2e2;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    line-height: 50px;
+    padding-left: 10px;
+
+}
+
+/*content*/
+.content {
+    overflow: hidden;
+    width: 100%;
+}
+
+/*nav*/
+.content .nav {
+    float: left;
+    width: 200px;
+    background-color: #ddd;
+    padding-bottom: 100em;
+    margin-bottom: -100em;
+}
+
+.content .nav .links li{
+    text-align: center;
+    background-color: #c6a7a5;
+    margin-bottom: 5px;
+    padding: 7px 0;
+}
+
+/* main */
+.content .main {
+    width: calc(100% - 400px);
+    float: left;
+    /* padding-bottom: 100em;
+    margin-bottom: -100em; */
+}
+
+.content .main .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
+} 
+
+.content .main .items .item {
+   width: calc(100%/4 - 4px);
+   background: #fff;
+   margin-bottom: 7px;
+   padding-bottom: 10px;
+}
+
+.content .main .items .item .item__img {
+    width: auto;
+    height: 150px;
+    position: relative;
+}
+
+.content .main .items .item .item__img img {
+    width: 100%;
+    height: 100%;
+}
+
+.content .main .items .item .item__img .ic-time {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    right: 5px;
+    display: none;
+    background-color: #3f3737;
+}
+.content .main .items .item:hover .item__img .ic-time {
+    display: block;
+}
+
+.content .main .items .item h3,
+.content .main .items .item p {
+    padding-left: 8px;
+}
+
+.content .main .items .item p {
+    color: #383b3b;
+    font-size: 14px;
+}
+/*aside*/
+.content aside {
+    width: 200px;
+    background-color: #a5c6ce;
+    float: left;
+    height: 100%;
+    padding: 10px 10px 500em 10px;
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+}
+
+.content aside h2, 
+.content aside p {
+    margin-bottom: 20px;
+}
+
+.content aside ul li {
+    margin-left: 40px;
+}
+
+.content aside a {
+    display: block;
+    /*padding-left: 20px;*/
+}
+
+/*footer*/
+footer {
+    background-color: #d1d0a6;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+
+/* 
+*** RESPONSIVE
+*/
+ @media only screen and (max-width: 620px) {
+     .content .nav,
+     .content .main,
+     .content .aside {
+         float: none;
+         display: block;
+         width: 100%;
+     }
+
+     .content .main .items .item {
+         width: calc(100%/2 - 4px);
+     }
+ }
