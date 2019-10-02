@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body*/
+html {
+    background-color: darkgray;
+}
+
+/*header*/
+header {
+    background-color: #e2e2e2;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    line-height: 50px;
+    padding-left: 10px;
+
+}
+
+/*content*/
+.content {
+    overflow: hidden;
+    width: 100%;
+}
+
+/*main*/
+.content .nav {
+    float: left;
+    width: 200px;
+}
+
+.content .nav .links li{
+    text-align: center;
+    background-color: #c6a7a5;
+    margin-bottom: 5px;
+    padding: 7px 0;
+}
+
+.content main {
+    width: calc(100% - 400px);
+    background-color: #fbff0e;
+    float: left;
+    padding-bottom: 100em;
+    margin-bottom: -100em;
+}
+
+.content main article {
+    padding: 10px;
+}
+
+.content main article h4 {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.content main article a{
+    display: block;
+    margin-bottom: 15px;
+}
+
+.content main article a, 
+.content main article p, 
+.content aside p {
+    font-family: sans-serif;
+}
+
+/*aside*/
+.content aside {
+    width: 200px;
+    background-color: #a5c6ce;
+    float: left;
+    height: 100%;
+    padding: 10px 10px 500em 10px;
+    /*padding-bottom: 500em;*/
+    margin-bottom: -500em;
+}
+
+.content aside h2, 
+.content aside p {
+    margin-bottom: 20px;
+}
+
+.content aside ul li {
+    margin-left: 40px;
+}
+
+.content aside a {
+    display: block;
+    /*padding-left: 20px;*/
+}
+
+/*footer*/
+footer {
+    background-color: #d1d0a6;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+
+/* 
+*** RESPONSIVE
+*/
+ @media only screen and (max-width: 620px) {
+     .content .nav,
+     .content .main,
+     .content .aside {
+         float: none;
+         display: block;
+         width: 100%;
+     }
+
+
+ }
