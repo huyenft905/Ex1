@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="form-group col-4">
+                <label for="clas-name">Class Name:</label>
+                <select class="form-control" id="class-name">
+                    <option>.net</option>
+                    <option>angular</option>
+                    <option>java</option>
+                    <option>test</option>
+                </select>
+            </div>
+
+            <div class="form-group col-4">
+                <label for="student">Students:</label>
+                <select class="form-control" id="student">
+                  
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+
+let students = [
+    { id: 1, name: 'tran van a', className: '.net' },
+    { id: 2, name: 'tran van b', className: '.net' },
+    { id: 3, name: 'tran van c', className: 'angular' },
+    { id: 4, name: 'tran van d', className: 'angular' },
+    { id: 5, name: 'tran van e', className: 'java' },
+    { id: 6, name: 'tran van f', className: 'java' },
+    { id: 7, name: 'tran van g', className: 'java' },
+    { id: 8, name: 'tran van h', className: 'test' },
+    { id: 9, name: 'tran van i', className: 'test' },
+    { id: 10, name: 'tran van j', className: 'test' }
+];
+
+let isClassName = document.getElementById('class-name');
+let isStudent = document.getElementById('student');
+
+function filterStudent(data) {
+    let subStudent = data.filter(function(item){
+        return item.className == isClassName.value;
+    });
+
+    subStudent.forEach(function(element) {
+        let opt = document.createElement('option');
+        opt.appendChild(document.createTextNode(`${element.name}`));
+        isStudent.appendChild(opt);
+    });
+}
+
+isClassName.addEventListener('change', filterStudent(students));
+
+ /**
+     * bài tập js lớp frontend:
+    
+    có 1 mảng sau:
+    students = [
+    {id: 1, name: 'tran van a', className: '.net'},
+    {id: 2, name: 'tran van b', className: '.net'},
+    {id: 3, name: 'tran van c', className: 'angular'},
+    {id: 4, name: 'tran van d', className: 'angular'},
+    {id: 5, name: 'tran van e', className: 'java'},
+    {id: 6, name: 'tran van f', className: 'java'},
+    {id: 7, name: 'tran van g', className: 'java'},
+    {id: 8, name: 'tran van h', className: 'test'},
+    {id: 9, name: 'tran van i', className: 'test'},
+    {id: 10, name: 'tran van j', className: 'test'}
+    ]
+    
+    => hiển thị ra 2 select box:
+    select 1 chọn className ( chọn .net, angular, java hoặc test)
+    select 2 chọn student
+    sau khi chọn className thì ở select 2 sẽ chọn student tương ứng.
+    ví dụ select 1 chọn .net thì select 2 chọn tran van a hoặc trang van b
+    
+    chỉ được dùng js thuần, viết trong file html luôn, tên file html là tên người làm
+    ví dụ: pham-trung-hieu-bai-tap-js.html
+    
+    nộp bài lên github
+    
+     */
+
+</script>
+</body>
+
+</html>
+
