@@ -17,10 +17,11 @@
             <div class="form-group col-4">
                 <label for="clas-name">Class Name:</label>
                 <select class="form-control" id="class-name">
-                    <option>.net</option>
-                    <option>angular</option>
-                    <option>java</option>
-                    <option>test</option>
+                    <option value="defaut">Select Class Name</option>
+                    <option value=".net">.net</option>
+                    <option value="angular">angular</option>
+                    <option value="java">java</option>
+                    <option value="test">test</option>
                 </select>
             </div>
 
@@ -33,8 +34,7 @@
         </div>
     </div>
 
-    <script>
-       
+<script>
 
 let students = [
     { id: 1, name: 'tran van a', className: '.net' },
@@ -52,19 +52,15 @@ let students = [
 let isClassName = document.getElementById('class-name');
 let isStudent = document.getElementById('student');
 
-function filterStudent(data) {
-    let subStudent = data.filter(function(item){
-        return item.className == isClassName.value;
-    });
+isClassName.onchange = function() {
+    isStudent.innerHTML = '';
 
-    subStudent.forEach(function(element) {
-        let opt = document.createElement('option');
-        opt.appendChild(document.createTextNode(`${element.name}`));
-        isStudent.appendChild(opt);
-    });
+    for(let i in students) {
+        if(students[i].className === this.value) {
+            isStudent.innerHTML += '<option>'+ students[i].name+'</option>';
+        }
+    }
 }
-
-isClassName.addEventListener('change', filterStudent(students));
 
  /**
      * bài tập js lớp frontend:
