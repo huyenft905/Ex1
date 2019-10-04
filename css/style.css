@@ -55,27 +55,30 @@ header h1 {
 
 .content .main .items {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding: 15px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
 } 
 
 .content .main .items .item {
-   width: calc(100%/4 - 4px);
    background: #fff;
    margin-bottom: 7px;
    padding-bottom: 10px;
+   width: 200px;
+   margin-right: 4px;
 }
 
 .content .main .items .item .item__img {
-    width: auto;
-    height: 150px;
+    width: 200px;
     position: relative;
 }
 
 .content .main .items .item .item__img img {
     width: 100%;
-    height: 100%;
 }
 
 .content .main .items .item .item__img .ic-time {
@@ -87,6 +90,7 @@ header h1 {
     right: 5px;
     display: none;
     background-color: #3f3737;
+    cursor: pointer;
 }
 .content .main .items .item:hover .item__img .ic-time {
     display: block;
@@ -95,12 +99,23 @@ header h1 {
 .content .main .items .item h3,
 .content .main .items .item p {
     padding-left: 8px;
+    display: -webkit-box;
+    max-height: 3.2rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
 }
 
 .content .main .items .item p {
     color: #383b3b;
     font-size: 14px;
 }
+
 /*aside*/
 .content aside {
     width: 200px;
@@ -147,6 +162,13 @@ footer {
      }
 
      .content .main .items .item {
-         width: calc(100%/2 - 4px);
+         margin-left: auto;
+         margin-right: auto;
+         width: 320px;
      }
+
+     .content .main .items .item .item__img {
+        width: 320px;
+        
+    }
  }
